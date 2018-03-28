@@ -1015,7 +1015,7 @@ boost::filesystem::path GetDefaultDataDir()
     // Unix: ~/.GACBcoin
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "GACBcoinhm";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "GACBcoinHome";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -1027,10 +1027,10 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     fs::create_directory(pathRet);
-    return pathRet / "GACBcoinhm";
+    return pathRet / "GACBcoinHome";
 #else
     // Unix
-    return pathRet / ".GACBcoinhm";
+    return pathRet / ".GACBcoinHome";
 #endif
 #endif
 }
